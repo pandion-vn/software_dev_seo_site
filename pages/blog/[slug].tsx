@@ -69,7 +69,7 @@ export default function PostDetail({ post }: PostDetailProps) {
             </div>
             <div
               className="mt-4 prose max-w-full mb-20"
-              dangerouslySetInnerHTML={{ __html: post.html }}
+              dangerouslySetInnerHTML={{ __html: post.html.replace(/srcset=*/g, '') }}
             />
           </div>
         </div>
