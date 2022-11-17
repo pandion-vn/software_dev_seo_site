@@ -1,7 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+/**
+ * @type {import('next').NextConfig}
+ */
+ module.exports = {
+  images: {
+    unoptimized: true,
+    domains: [
+      'static.ghost.org',
+      'images.unsplash.com'
+    ],
+  },
   reactStrictMode: true,
-  swcMinify: true,
-}
-
-module.exports = nextConfig
+  swcMinify: false, // Required to fix: https://nextjs.org/docs/messages/failed-loading-swc
+};

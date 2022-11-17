@@ -1,26 +1,22 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+/* 
+|| Global styles & custom css can be written here.
+*/
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* Import tailwind base styles */
+@tailwind base;
 
-* {
-  box-sizing: border-box;
-}
+/* Import tailwind component styles */
+@tailwind components;
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* Import tailwind utility styles */
+@tailwind utilities;
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose blockquote {
+  color: #243e63;
 }
