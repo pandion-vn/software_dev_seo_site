@@ -11,7 +11,7 @@ interface PostDetailProps extends WithChildren {
 }
 
 export default function PostDetail({ post }: PostDetailProps) {
-  const dateStr = formatDate(post.published_at, 'HH:mm - DD/MM/YYYY');
+  const dateStr = formatDate(post.published_at, 'DD/MM/YYYY HH:mm');
 
   const meta = {
     logo: '/favicon.ico',
