@@ -52,13 +52,15 @@ function LatestPost({ post }: LatestPostProps) {
           </Link>
         </div>
         <div className="sm:w-1/2 lg:w-1/3 bg-gray-100 p-8 border-2 border-t-0 rounded-b-lg sm:rounded-bl-none sm:rounded-r-lg sm:border-t-2 sm:border-l-0 relative">
-          <Link href={`/blog/${post.slug}`}>
-            <div className="cursor-pointer">
-              {post.primary_tag && (
+          <div className="cursor-pointer">
+            {post.primary_tag && (
+              <Link key={post.primary_tag.id} href={`/tag/${post.primary_tag.slug}`}>
                 <div className="font-display uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose after:content">
                   {post.primary_tag.name}
                 </div>
-              )}
+              </Link>
+            )}
+            <Link href={`/blog/${post.slug}`}>
               <div className="border-b-2 border-primary-500 w-8"></div>
               <div className="mt-4 uppercase text-gray-600 italic font-semibold text-xs">
                 {dateStr}
@@ -69,12 +71,12 @@ function LatestPost({ post }: LatestPostProps) {
               <p className="text-sm mt-3 leading-loose text-gray-600 font-medium">
                 {description}
               </p>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default LatestPost;
