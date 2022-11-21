@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { PostsOrPages } from '@tryghost/content-api';
 import Layout from '@/components/layout';
 import LoadingWidget from '@/components/shared/loading';
-import PostListing from '@/components/posts/post_listing';
+import PostsListing from '@/components/posts/post_listing';
 import LatestPost from '@/components/posts/latest_post';
 import Heading from '@/components/shared/heading';
 
@@ -38,9 +38,9 @@ export default function Home({ latestPost, posts }: HomeProps) {
 
   return (
     <Layout meta={meta}>
-      <Heading title='Bài viết' />
+      <Heading title='Blog Posts' />
       <LatestPost post={latestPost} />
-      <PostListing posts={posts} />
+      <PostsListing posts={posts} />
     </Layout>
   );
 }

@@ -5,6 +5,7 @@ import { Meta, WithChildren } from '@/types';
 import { formatDate, placeholderBlurhash } from '@/common/util';
 import BlurImage from '@/components/shared/blur_image';
 import Layout from '@/components/layout';
+import Link from 'next/link';
 
 interface PostDetailProps extends WithChildren {
   post: Post;
@@ -16,9 +17,7 @@ export default function PostDetail({ post }: PostDetailProps) {
   const meta = {
     logo: '/favicon.ico',
     title: post.title ?? 'Software development blog',
-    description:
-      post.excerpt ??
-      'Website to share information / technical about software development',
+    description: post.excerpt ?? 'Website to share information / technical about software development',
     keywords: undefined,
     metaHTML: undefined,
   } as Meta;
@@ -50,14 +49,14 @@ export default function PostDetail({ post }: PostDetailProps) {
             {post.tags?.length && (
               <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
                 {post.tags.map((tag: any) => (
-                  // <Link key={tag.id} href={`/tag/${tag.slug}`}>
-                  <div key={tag.id}>
-                    <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
-                      {tag.name}
+                  <Link key={tag.id} href={`/tag/${tag.slug}`}>
+                    <div key={tag.id}>
+                      <div className="uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose">
+                        {tag.name}
+                      </div>
+                      <div className="border-b-2 border-primary-500 w-8"></div>
                     </div>
-                    <div className="border-b-2 border-primary-500 w-8"></div>
-                  </div>
-                  // </Link>
+                  </Link>
                 ))}
               </div>
             )}
