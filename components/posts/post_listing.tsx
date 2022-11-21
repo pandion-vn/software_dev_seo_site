@@ -15,9 +15,9 @@ function PostsListing({ posts }: PostsListingProps) {
       <div className="max-w-screen-xl mx-auto">
         <div className="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
-            <div className="flex-col group mb-8 md:mb-0">
+            <div key={index} className="flex-col group mb-8 md:mb-0">
               <div className="relative h-64">
-                <Link href={`/blog/${post.slug}`} key={index}>
+                <Link href={`/blog/${post.slug}`}>
                   {post.feature_image ? (
                     <BlurImage
                       src={post.feature_image}
